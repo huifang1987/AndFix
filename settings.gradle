@@ -1,1 +1,3 @@
-rootProject.name = 'andfix'
+include ':andfix'
+include ':app'
+rootProject.name = "AndFix"
