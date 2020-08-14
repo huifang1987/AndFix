@@ -19,7 +19,7 @@ usage: apkpatch -f <new> -t <old> -o <output> -k <keystore> -p <***> -a <alias> 
  -p,--kpassword <***>   keystore password.
  -t,--to <loc>          old Apk file path.
  
- apkpatch.bat -f 2.apk -t 1.apk -o . -k ../app/android.keystore -p 123456 -a android.keystore - e 123456
+ apkpatch.bat -f 2.apk -t 1.apk -o . -k ../app/android.keystore -p 123456 -a android.keystore -e 123456
 
 ## 关于混淆
 If you enable ProGuard, you must save the mapping.txt, so your new version's build can use it with "-applymapping".

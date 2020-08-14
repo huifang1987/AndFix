@@ -55,4 +55,5 @@ void replace_6_0(JNIEnv* env, jobject src, jobject dest);
 void setFieldFlag_6_0(JNIEnv* env, jobject field);
 void replace_7_0(JNIEnv* env, jobject src, jobject dest);
 void setFieldFlag_7_0(JNIEnv* env, jobject field);
-
+void replace_8_0(JNIEnv* env, jobject src, jobject dest);
+void setFieldFlag_8_0(JNIEnv* env, jobject field);

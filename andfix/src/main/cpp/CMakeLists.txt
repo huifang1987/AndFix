@@ -34,6 +34,7 @@ add_library( # Sets the name of the library.
             art/art_method_replace_5_1.cpp
             art/art_method_replace_6_0.cpp
             art/art_method_replace_7_0.cpp
+            art/art_method_replace_8_0.cpp
             dalvik/dalvik_method_replace.cpp)
 
 # Searches for a specified prebuilt library and stores the path as a

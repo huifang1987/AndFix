@@ -20,7 +20,9 @@ package com.euler.andfix;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.alipay.euler.andfix.patch.PatchManager;
 import com.euler.test.A;
 
 /**
@@ -32,13 +34,18 @@ import com.euler.test.A;
  */
 public class MainActivity extends Activity {
 	private static final String TAG = "euler";
+	/**
+	 * patch manager
+	 */
+	private PatchManager mPatchManager;
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Log.e(TAG, A.a("good"));
-		Log.e(TAG, "" + new A().b("s1", "s2"));
-		Log.e(TAG, "" + new A().getI());
+		setContentView(R.layout.main);
+		findViewById(R.id.tv_load_patch).setOnClickListener(v->loadPatch());
+		findViewById(R.id.tv_invoke_method).setOnClickListener(v->invokeMethod());
 	}
 
 	@Override
@@ -47,4 +54,21 @@ public class MainActivity extends Activity {
 		android.os.Process.killProcess(android.os.Process.myPid());
 	}
 
+	private void loadPatch(){
+		// initialize
+		mPatchManager = new PatchManager(this);
+		mPatchManager.init("1.0");
+		Log.d(TAG, "inited.");
+
+		// load patch
+		mPatchManager.loadPatch();
+		Log.d(TAG, "apatch loaded.");
+		Toast.makeText(this, "补丁加载完成！", Toast.LENGTH_LONG);
+	}
+
+	private void invokeMethod(){
+		A.a("good");
+		new A().b("s1", "s2");
+		new A().getI();
+	}
 }
