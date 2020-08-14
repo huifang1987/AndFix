@@ -20,6 +20,7 @@ package com.euler.andfix;
 import java.io.IOException;
 
 import android.app.Application;
+import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
 
@@ -55,7 +56,7 @@ public class MainApplication extends Application {
 		// add patch at runtime
 		try {
 			// .apatch file path
-			String patchFileString = Environment.getExternalStorageDirectory()
+			String patchFileString = getExternalFilesDir(null)
 					.getAbsolutePath() + APATCH_PATH;
 			mPatchManager.addPatch(patchFileString);
 			Log.d(TAG, "apatch:" + patchFileString + " added.");

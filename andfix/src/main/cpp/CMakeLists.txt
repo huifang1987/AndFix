@@ -5,9 +5,6 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 
-#定义工程名称
-PROJECT(andfix)
-
 #设置编译器编译模式：
 # debug 版会生成相关调试信息，可以使用 GDB 进行
 # release不会生成调试信息。
@@ -24,7 +21,7 @@ SET(CMAKE_CXX_FLAGS_DEBUG "-g -Wall")
 # Gradle automatically packages shared libraries with your APK.
 
 add_library( # Sets the name of the library.
-             andfix-lib
+             andfix
 
              # Sets the library as a shared library.
              SHARED
@@ -57,7 +54,7 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-                       andfix-lib
+                       andfix
 
                        # Links the target library to the log library
                        # included in the NDK.
