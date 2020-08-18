@@ -18,6 +18,7 @@
 package com.euler.andfix;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -63,12 +64,13 @@ public class MainActivity extends Activity {
 		// load patch
 		mPatchManager.loadPatch();
 		Log.d(TAG, "apatch loaded.");
-		Toast.makeText(this, "补丁加载完成！", Toast.LENGTH_LONG);
+		Toast.makeText(this, "补丁加载完成！", Toast.LENGTH_LONG).show();
 	}
 
 	private void invokeMethod(){
-		A.a("good");
-		new A().b("s1", "s2");
-		new A().getI();
+		StringBuilder sb = new StringBuilder();
+		sb.append(A.a()).append("\n").append(new A().b());
+		Log.d(TAG, sb.toString());
+		Toast.makeText(this, sb.toString(), Toast.LENGTH_LONG).show();
 	}
 }

@@ -26,25 +26,17 @@ import android.util.Log;
  * 
  */
 public class Fix {
-	String s = "s";
-	private static O o = new O("fix");
-	static int i = 11;
+	private String s = "fixed";
 
-	public static String a(String str) {
-		Log.d("qq", str);
-		Log.i("euler", "fix succes");
-		return "b";
+	public static String a() {
+		return "static method fix success";
 	}
 
-	public int b(String s1, String s2) {
-		Log.e("euler", s1);
-		Log.e("euler", i + "==" + c());
-		Log.i("euler", "fix succes" + s);
-		Log.i("euler", o.s);
-		return 0;
+	public String b() {
+		return "non-static method fix success: " + "\n" +c();
 	}
 
-	private String c() {
-		return "a";
+	private String c(){
+		return "private method fix success";
 	}
 }

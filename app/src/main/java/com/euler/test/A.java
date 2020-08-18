@@ -28,22 +28,17 @@ import android.util.Log;
  * 
  */
 public class A {
-	String s = "s";
-	private static O o = new O("a");
-	static int i = 10;
+	private String s = "error";
 
-	public static String a(String str) {
-		Log.i("euler", "fix error");
-		return "a";
+	public static String a() {
+		return "static method error";
 	}
 
-	public int b(String s1, String s2) {
-		Log.i("euler", "fix error");
-		Log.i("euler", o.s);
-		return 0;
+	public String b() {
+		return "non-static method error" + "\n" +c();
 	}
 
-	public int getI() {
-		return i;
+	private String c(){
+		return "private method error";
 	}
 }
